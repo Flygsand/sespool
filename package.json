@@ -1,0 +1,29 @@
+{
+  "name": "sespool",
+  "description": "Dead simple SES bounce management",
+  "version": "0.1.0",
+  "author": "WOW! Group Development <oss@wow-group.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wowgroup/sespool.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --recursive test"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.3.10",
+    "bluebird": "^3.3.5",
+    "mysql": "^2.10.2",
+    "restify": "^4.0.4",
+    "sequelize": "^3.23.0",
+    "winston": "^2.2.0",
+    "winston-jsonevent": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "hippie": "^0.5.0",
+    "mocha": "^2.4.5",
+    "node-uuid": "^1.4.7"
+  }
+}
