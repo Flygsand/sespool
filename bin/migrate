@@ -6,6 +6,10 @@ _term() {
 
 trap _term SIGTERM
 
+if [[ -n "$APP_PATH" ]]; then
+  export PATH="$APP_PATH/.apt/usr/lib/liquibase-3.4.2:$PATH"
+fi
+
 JDBC_URL=$(node -e "var a = require('url').parse, b = a(process.argv[1]), c = b.auth.split(':'); process.stdout.write('jdbc:' + b.protocol + '//' + b.host + b.pathname + '?user=' + c[0] + '&password=' + c[1]);" $DATABASE_URL)
 liquibase --classpath=mariadb-java-client-1.4.4.jar --driver=org.mariadb.jdbc.Driver --changeLogFile=migrations.sql --url="$JDBC_URL" migrate &
 liquibase=$!
