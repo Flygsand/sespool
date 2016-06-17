@@ -36,6 +36,8 @@ describe('worker/receiver', function() {
     var db = new Sequelize(process.env.DATABASE_URL)
       , sqs = new AWS.SQS();
 
+    this.timeout(5000);
+
     AWS.config.setPromisesDependency(bluebird);
     defineModels(db);
     return db.sync({force: true})
@@ -80,6 +82,8 @@ describe('worker/receiver', function() {
   it('marks as deliverable', function() {
     var db = new Sequelize(process.env.DATABASE_URL)
       , sqs = new AWS.SQS();
+
+    this.timeout(5000);
 
     AWS.config.setPromisesDependency(bluebird);
     defineModels(db);
