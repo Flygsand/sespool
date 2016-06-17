@@ -59,7 +59,8 @@ module.exports = function(db, sqs) {
         })
         .then(function() {
           return Bounce.bulkCreate(bounces, {
-            transaction: t
+            transaction: t,
+            ignoreDuplicates: true
           });
         });
       })
