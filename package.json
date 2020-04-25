@@ -16,7 +16,7 @@
     "bluebird": "^3.3.5",
     "mysql": "^2.10.2",
     "restify": "^4.0.4",
-    "sequelize": "^3.23.0",
+    "sequelize": "^5.21.7",
     "winston": "^2.2.0",
     "winston-jsonevent": "^0.1.0"
   },
